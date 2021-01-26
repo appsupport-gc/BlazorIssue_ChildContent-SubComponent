@@ -1,0 +1,13 @@
+<div style="color:red">
+    <b>
+        Header:
+        @Title1 |
+        @Title2
+        (This should not be showing BOTH titles!!)
+    </b>
+</div>
+
+@code {
+    [Parameter] public string Title1 { get; set; }
+    [Parameter] public string Title2 { get; set; }
+}

@@ -1,0 +1,12 @@
+<div>
+        Page @Id Values:
+        @Title1 |
+        @Title2
+        (The values at this level do NOT get combined)
+</div>
+@code {
+    [Parameter] public string Id {get; set;}
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public string Title1 { get; set; }
+    [Parameter] public string Title2 { get; set; }
+}

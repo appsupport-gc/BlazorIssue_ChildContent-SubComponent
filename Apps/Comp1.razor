@@ -1,0 +1,31 @@
+﻿
+    <DemoPage @ref=Page Title1="@Title1">
+        <DemoHeader Title1="@Title1" />
+        <div>
+             Comp1
+        </div>
+        <div>
+                Values:
+                @Title1 |
+                @Title2
+                (The values at this level do NOT get combined)
+        </div>
+        
+    </DemoPage>
+
+
+@code {
+ [Parameter] public DemoApp App { get; set; }
+ private DemoPage page;
+ protected DemoPage Page {
+     get => page; 
+    set {
+        page = value;
+        App.Page1 = value;
+    }
+ }
+
+    [Parameter] public string Title1 { get; set; }
+    [Parameter] public string Title2 { get; set; }
+
+}

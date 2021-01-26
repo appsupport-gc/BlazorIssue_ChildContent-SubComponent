@@ -1,0 +1,25 @@
+﻿<div>
+    (Click Comp1 and then Comp2 or reverse and the Header ABSORBS both Title1 and Title2 properties even though they are SEPERATE objects entirely.)
+</div>
+<button @onclick='LoadComp1'>Comp1</button>
+<button @onclick='LoadComp2'>Comp2</button>
+@DisplayPage?.ChildContent
+
+<Comp1 App=this Title1=Title1/>
+<Comp2 App=this Title2="Title2"/>
+
+@code {
+    protected DemoPage DisplayPage {get; set;}
+
+    public DemoPage Page1 {get; set;}
+    public DemoPage Page2 {get; set;}
+
+    protected void LoadComp1() {
+        DisplayPage = Page1;
+    }
+
+    protected void LoadComp2() {
+        DisplayPage = Page2;
+    }
+
+}

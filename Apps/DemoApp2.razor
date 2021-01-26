@@ -1,0 +1,37 @@
+﻿<div>
+    (Whereas here without the wrapper component the attributes are NOT combined.)
+</div>
+
+<button @onclick='LoadPage1'>Page1</button>
+<button @onclick='LoadPage2'>Page2</button>
+@DisplayPage?.ChildContent
+
+    <DemoPage @ref=Page1 Id="P1" Title1="P1-Title1">
+        <DemoHeader Title1="P1-Title1" />
+        <div>
+             Page1
+        </div>
+    </DemoPage>
+
+  <DemoPage @ref=Page2 Id="P2" Title2="P2-Title2">
+        <DemoHeader Title2="P2-Title2"/>
+        <div>
+            Page2
+        </div>
+    </DemoPage>
+
+@code {
+    protected DemoPage DisplayPage {get; set;}
+
+    public DemoPage Page1 {get; set;}
+    public DemoPage Page2 {get; set;}
+
+    protected void LoadPage1() {
+        DisplayPage = Page1;
+    }
+
+    protected void LoadPage2() {
+        DisplayPage = Page2;
+    }
+
+}
