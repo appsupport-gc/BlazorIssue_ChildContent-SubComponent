@@ -11,6 +11,11 @@
                 (The values at this level do NOT get combined)
         </div>
         
+        <div style="color:red"> Plus this counter doesn't work (inside a sub component)</div>
+               <p>Current count: @currentCount</p>
+
+            <AddTo @bind-Count="currentCount" />
+            <AddTo @bind-Count="currentCount" AddValue="-1" />
     </DemoPage>
 
 
@@ -27,5 +32,5 @@
 
     [Parameter] public string Title1 { get; set; }
     [Parameter] public string Title2 { get; set; }
-
+    private int currentCount = 0;
 }

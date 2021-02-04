@@ -11,6 +11,11 @@
         <div>
              Page1
         </div>
+        <div style="color:green"> But DOES work (outside a sub component)</div>
+               <p>Current count: @currentCount</p>
+
+            <AddTo @bind-Count="currentCount" />
+            <AddTo @bind-Count="currentCount" AddValue="-1" />
     </DemoPage>
 
   <DemoPage @ref=Page2 Id="P2" Title2="P2-Title2">
@@ -34,4 +39,5 @@
         DisplayPage = Page2;
     }
 
+    private int currentCount = 0;
 }

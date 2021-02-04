@@ -1,0 +1,13 @@
+<button class="btn btn-primary" @onclick="IncrementCount">Add @AddValue to @Count</button>
+
+@code {
+    [Parameter] public int AddValue { get; set; } = 1;
+    [Parameter] public int Count { get; set; }
+    [Parameter] public EventCallback<int> CountChanged { get; set; }
+
+    private void IncrementCount()
+    {
+        Count += AddValue;
+        CountChanged.InvokeAsync(Count);
+    }
+}
